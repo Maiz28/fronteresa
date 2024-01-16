@@ -1,0 +1,14 @@
+/* Estilos personalizados */
+.card {
+    border-radius: 15px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .invalid-feedback {
+    color: red;
+    margin-top: 5px;
+  }
+  

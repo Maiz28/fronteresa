@@ -1,0 +1,75 @@
+<style>
+  /* Estilos para la tabla */
+  .table-custom thead th {
+    background-color: #f5dab8;
+    color: rgb(223, 127, 58);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .table-custom tbody td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* Cambiar el tipo de letra de la tabla */
+  table.table-custom {
+    font-family: "Arial", "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Estilos para filas impares */
+  .table-custom tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <h1>Registros</h1>
+
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-custom">
+          <thead class="thead-dark">
+            <tr>
+              <th>Comanda</th>
+              <th>Pedido</th>
+              <th>Número de mesa</th>
+              <th>Nombre del mesero</th>
+              <th>Cliente</th>
+              <th>Platillo</th>
+              <th>Cantidad</th>
+              <th>Bebida</th>
+              <th>Cantidad Bebida</th>
+              <th>Estatus</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí van tus filas de datos -->
+            <tr *ngFor="let Completo of completoService.completo">
+              <td>{{ Completo.idcomanda }}</td>
+              <td>{{ Completo.idpedido }}</td>
+              <td>{{ Completo.numeromesa }}</td>
+              <td>{{ Completo.nombremesero }}</td>
+              <td>{{ Completo.nombrecliente }}</td>
+              <td>{{ Completo.alimentoconsumir }}</td>
+              <td>{{ Completo.cantidad }}</td>
+              <td>{{ Completo.bebida }}</td>
+              <td>{{ Completo.cantidadbebida }}</td>
+              <td>{{ Completo.status }}</td>
+              <td>{{ Completo.fecha | date : "yyyy-MM-dd" }}</td>
+              <td>{{ Completo.hora | date : "shortTime" }}</td>
+            </tr>
+            <!-- Fin de las filas de datos -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
