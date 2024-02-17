@@ -1,3 +1,69 @@
-.navbar{
-    background-color: orange;
+.footer {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.footer h3 {
+  color: #333;
+}
+
+.footer p {
+  color: #666;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.titulos{
+  font-family: cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+.cardtext{
+  font-family: cursive;
+  font-size: 20px;
+  line-height: 1.9;
+  color: #0d0d0d;
+  text-align: center;
+}
+
+/* Estilos personalizados para el navbar */
+.navbar-custom {
+  background-color: #77b179; /* Color de fondo */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  color: #fff; /* Color del texto */
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-color: #fff; /* Color del ícono del botón de alternancia */
+}
+
+.navbar-custom .navbar-brand img {
+  margin-right: 5px; /* Espaciado entre la imagen y el texto del logo */
+  height: 30px; /* Tamaño de la imagen del logo */
+  vertical-align: middle;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #fff; /* Color del texto en hover */
+}
+
+.navbar-custom .nav-link.disabled {
+  color: rgba(255, 255, 255, 0.5); /* Color del texto para elementos deshabilitados */
 }

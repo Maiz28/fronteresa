@@ -14,6 +14,9 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { PagoComponent } from './components/pago/pago.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
+import { PaginaerrorComponent } from './components/paginaerror/paginaerror.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
     PagoComponent,
     PedidosComponent,
     InicioComponent,
+    PedidoComponent,
+    PaginaerrorComponent,
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+<br>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title mb-4">Pedido</h5>
+      <form (ngSubmit)="submitForm()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" id="nombre" class="form-control" name="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico:</label>
+          <input type="email" id="email" class="form-control" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="opciones" class="form-label">Opciones:</label>
+          <select id="opciones" class="form-select" name="opciones"  required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+  
