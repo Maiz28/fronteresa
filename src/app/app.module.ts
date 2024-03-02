@@ -2,36 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
-import { ComandaComponent } from './components/comanda/comanda.component';
-import { OrdenComponent } from './components/orden/orden.component';
-import { TablapedidoComponent } from './components/tablapedido/tablapedido.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
-import { RegistroComponent } from './components/registro/registro.component';
-import { PagoComponent } from './components/pago/pago.component';
-import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { PedidoComponent } from './components/pedido/pedido.component';
-import { PaginaerrorComponent } from './components/paginaerror/paginaerror.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { PaginaerrorComponent } from './components/paginaerror/paginaerror.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComandaComponent,
-    OrdenComponent,
-    TablapedidoComponent,
-    RegistroComponent,
-    PagoComponent,
-    PedidosComponent,
     InicioComponent,
-    PedidoComponent,
-    PaginaerrorComponent,
     MenuComponent,
-
+    PaginaerrorComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

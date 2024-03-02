@@ -1,14 +1,18 @@
 .footer {
-  background-color: #f8f9fa;
-  padding: 50px 0;
+  background-color: rgba(119, 177, 121, 0.5); /* Color de fondo con transparencia */
+  padding: 10px 20px; /* Espaciado interno */
+  position: sticky; /* Hace que la barra de navegación sea pegajosa */
+  top: 0; /* Posición inicial pegajosa */
+  width: 100%; /* Ancho completo */
+  z-index: 999; /* Z-index para estar por encima de otros elementos */
 }
 
 .footer h3 {
-  color: #333;
+  color: #ffffff;
 }
 
 .footer p {
-  color: #666;
+  color: #eae2e2;
 }
 
 .social-icons li {
@@ -17,7 +21,7 @@
 }
 
 .social-icons a {
-  color: #333;
+  color: #ffffff;
   font-size: 24px;
   transition: color 0.3s;
 }
@@ -42,7 +46,12 @@
 
 /* Estilos personalizados para el navbar */
 .navbar-custom {
-  background-color: #77b179; /* Color de fondo */
+  background-color: rgba(119, 177, 121, 0.5); /* Color de fondo con transparencia */
+  padding: 10px 20px; /* Espaciado interno */
+  position: sticky; /* Hace que la barra de navegación sea pegajosa */
+  top: 0; /* Posición inicial pegajosa */
+  width: 100%; /* Ancho completo */
+  z-index: 999; /* Z-index para estar por encima de otros elementos */
 }
 
 .navbar-custom .navbar-brand,
@@ -66,4 +75,8 @@
 
 .navbar-custom .nav-link.disabled {
   color: rgba(255, 255, 255, 0.5); /* Color del texto para elementos deshabilitados */
+}
+
+.content{
+  background-color: #071a11;
 }

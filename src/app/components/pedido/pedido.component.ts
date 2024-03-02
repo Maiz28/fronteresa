@@ -1,4 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-pedido',
@@ -8,14 +12,14 @@ import { Component, OnInit } from '@angular/core';
 export class PedidoComponent implements OnInit {
 
 
-  submitForm() {
-    // Lógica para manejar el envío del formulario
-  }
-  formData: any = {}; 
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+ 
+
 
 }
 

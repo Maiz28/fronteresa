@@ -34,7 +34,7 @@
     max-width: 1200px; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 20px; /* Espacio interno del contenedor */
-    border: 0px; /* Borde del contenedor */
+    border: 5px; /* Borde del contenedor */
     box-sizing: border-box; /* Incluye el borde en el cálculo del ancho */
   }
   
@@ -57,4 +57,32 @@
   color: white; /* Cambia el color del texto del botón */
   display: block; /* Asegura que el botón ocupe todo el ancho del contenedor */
   margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
+.containerv {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Ancho máximo del contenedor */
+  height: 510px;
+  margin: 0 auto; /* Centrar el contenedor */
+  overflow: hidden; /* Ocultar cualquier parte de la imagen que sobresalga del contenedor */
+}
+
+/* Estilos para la imagen de fondo */
+.containerv img {
+  width: 100%;
+  display: block;
+}
+
+/* Estilos para el texto superpuesto */
+.text-overlay {
+  position: absolute;
+  bottom: 20px; /* Posición vertical desde abajo */
+  left: 0; /* Posición horizontal al inicio */
+  right: 0; /* Posición horizontal al final */
+  text-align: center; /* Alinear el texto al centro */
+  color: white; /* Color del texto */
+}
+.content {
+  background-color: #071a11;
 }

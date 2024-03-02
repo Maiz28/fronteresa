@@ -1,79 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu título aquí</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="" alt="">
-                Gustoes
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/pedido">Pedido</a>
-                    <a class="nav-link" href="/registro">Registros</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </div>
-            </div>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-person"></i> Iniciar sesión
-                </a>
-            </div>
+<div class="content">
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="" alt="" />
+        Gustoes
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/pedido"
+            >Pedido</a
+          >
+          <a class="nav-link" href="/registro">Registros</a>
+          <a class="nav-link" href="/login">Inicio de sesion</a>
+          <a class="nav-link" href="/register">registro</a>
         </div>
-    </nav>
-    
-
- <div>
-    <router-outlet></router-outlet>
- </div>
-
- <br>
- <footer class="footer">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Contacto</h2>
-                <p>Dirección: Calle Principal #123, Dolores Hidalgo, GTO</p>
-                <p>Teléfono: 4427504017</p>
-                <p>Correo electrónico: gustoes@gmail.com</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Horario</h2>
-                <p>Lunes a Viernes: 11:00 AM - 10:00 PM</p>
-                <p>Sábados y Domingos: 12:00 PM - 11:00 PM</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Síguenos</h2>
-                <ul class="list-inline social-icons">
-                    <li><a href="https://www.facebook.com/p/Restaurante-Gustó-100064173429303/?paipv=0&eav=Afb_-C9F3j5asm-Yozu3seMobc65c0w7Prt-_RsKQS047JWghBGgmqcR3stM3XHW9gg&_rdr"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/elgustoesnuestroo/"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwil6o39y6uEAxVxBEQIHU_JDx8QFnoECBsQAQ&url=https%3A%2F%2Ftwitter.com%2Fgustos_coffee%3Flang%3Des&usg=AOvVaw0oVZahGO8byWD8_GkGQlxS&opi=89978449"><i class="fab fa-twitter"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>© 2024 Gustoes. Todos los derechos reservados.</p>
-            </div>
-        </div>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="#">
+          <i class="bi bi-person"></i> Iniciar sesión
+        </a>
+      </div>
     </div>
-</footer>
+  </nav>
 
-  
+  <router-outlet></router-outlet>
 
-
-
-</body>
-</html>
+  <footer class="footer">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Contacto</h2>
+          <p>Dirección: Calle Principal #123, Dolores Hidalgo, GTO</p>
+          <p>Teléfono: 4427504017</p>
+          <p>Correo electrónico: gustoes@gmail.com</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Horario</h2>
+          <p>Lunes a Viernes: 11:00 AM - 10:00 PM</p>
+          <p>Sábados y Domingos: 12:00 PM - 11:00 PM</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Síguenos</h2>
+          <ul class="list-inline social-icons">
+            <li>
+              <a
+                href="https://www.facebook.com/p/Restaurante-Gustó-100064173429303/?paipv=0&eav=Afb_-C9F3j5asm-Yozu3seMobc65c0w7Prt-_RsKQS047JWghBGgmqcR3stM3XHW9gg&_rdr"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/elgustoesnuestroo/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwil6o39y6uEAxVxBEQIHU_JDx8QFnoECBsQAQ&url=https%3A%2F%2Ftwitter.com%2Fgustos_coffee%3Flang%3Des&usg=AOvVaw0oVZahGO8byWD8_GkGQlxS&opi=89978449"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>© 2024 Gustoes. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

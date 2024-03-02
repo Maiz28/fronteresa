@@ -1,51 +1,87 @@
-<!doctype html>
-<html lang="en">
-  <br>
-  <div class="container1">
-    <div class="card1">
-      <img src="https://i.pinimg.com/564x/d7/1b/cb/d71bcbd6c056a9e3f7e1851fa96ff78a.jpg"  alt="...">
+<div class="content">
+  <div class="container mt-4">
+    <div class="containerv">
+      <img
+        src="https://i.pinimg.com/564x/2f/c1/3f/2fc13ff674292a265eb49ea824cfa95e.jpg"
+        alt="Imagen de fondo"
+      />
+    </div>
+    <div class="containerv">
+      <img
+        src="https://i.pinimg.com/564x/32/59/fa/3259fa634062cdf5c62637dc6f81ae53.jpg"
+        alt="Imagen de fondo"
+      />
+      <div class="text-overlay">
+        <h2 class="titulos">Bienvenidos a Gustoes</h2>
+      </div>
+    </div>
+    <div class="containerv">
+      <img
+        src="https://i.pinimg.com/564x/d2/e1/d7/d2e1d760944af62aee15b2196a3ae58f.jpg"
+        alt="Imagen de fondo"
+      />
+    </div>
+  </div>
+
+  <div class="container mt-4 mb-4">
+    <div class="card">
+      <br />
+      <p class="titulos">Reservaciones</p>
+      <img
+        src="https://i.pinimg.com/564x/5e/1a/99/5e1a99e065a0e3be3666bb22052410f4.jpg"
+        alt="..."
+      />
+      <div class="card-body">
+        <p class="card-text">
+          "En nuestro restaurante, ofrecemos reservas de mesas para ocasiones
+          especiales. Permítanos hacer de su próxima celebración un evento
+          inolvidable."
+        </p>
+        <br /><br /><br />
+        <button routerLink="/pedido" type="submit" class="btn btn-custom">
+          Reservar
+        </button>
+        <br />
+      </div>
     </div>
     <div class="card">
-      <p class="titulos">Gustoes</p>
-        <p class="card-text">En el corazón de una bulliciosa ciudad, había un pequeño callejón escondido entre los ruidos y luces de los negocios cercanos. En este callejón, había un edificio antiguo que alguna vez albergó una tienda de antigüedades. Sin embargo, ahora estaba en desuso y olvidado.
-          Un día, una joven emprendedora llamada Isabela pasó por ese callejón mientras buscaba un lugar para realizar su sueño de abrir su propio restaurante. Al ver el edificio abandonado, sintió una chispa de inspiración. Imaginó convertir ese espacio en un lugar especial donde las personas 
-          pudieran reunirse y disfrutar de una experiencia</p>
+      <br />
+      <p class="titulos">Entregas a domicilio</p>
+      <img
+        src="https://i.pinimg.com/564x/a0/8a/31/a08a3129902594d47b889573c8dd3b11.jpg"
+        alt="..."
+      />
+      <div class="card-body">
+        <p class="card-text">
+          "Ordena fácilmente desde casa con nuestro servicio de entrega a
+          domicilio o elige recoger tu pedido en el restaurante. ¡Tú decides
+          cómo disfrutar de nuestra deliciosa comida!"
+        </p>
+        <br /><br /><br />
+        <button routerLink="/error" type="submit" class="btn btn-custom">
+          Pide ahora
+        </button>
+        <br />
+      </div>
     </div>
+    <div class="card">
+      <br />
+      <p class="titulos">Amplia selección de platos</p>
+      <img
+        src=" https://i.pinimg.com/564x/67/19/f3/6719f370836104b73d70bedd087139ae.jpg"
+        alt="..."
+      />
+      <div class="card-body">
+        <p class="card-text">
+          "Explora nuestra amplia variedad de deliciosos platos en el menú.
+          Desde clásicos hasta opciones innovadoras, tenemos algo para todos los
+          gustos. Sabores frescos y auténticos que te encantarán en cada bocado.
+          ¡Descubre una experiencia gastronómica única con nosotros!"
+        </p>
+        <button routerLink="/menu" type="submit" class="btn btn-custom">
+          Conoce más
+        </button>
+      </div>
     </div>
-
-
-<br>
-
-
-<div class="container">
-  <div class="card"> <br> <p class="titulos"> Reservaciones</p> 
-    <img src="https://i.pinimg.com/564x/5e/1a/99/5e1a99e065a0e3be3666bb22052410f4.jpg"  alt="...">
-    <div class="card-body">
-      <p class="card-text">"En nuestro restaurante, ofrecemos reservas de mesas para ocasiones especiales. Permítanos hacer de su próxima celebración un evento inolvidable."</p>
-      <br><br><br>
-      <button  routerLink="/pedido"  type="submit" class="btn btn-custom"> Reservar </button>
-      <br>
-    </div>
-  </div>
-  <div class="card"> <br><p class="titulos"> Entregas a domicilio   </p> 
-    <img src="https://i.pinimg.com/564x/a0/8a/31/a08a3129902594d47b889573c8dd3b11.jpg" alt="...">
-    <div class="card-body">
-      <p class="card-text">"Ordena fácilmente desde casa con nuestro servicio de entrega a domicilio o elige recoger tu pedido en el restaurante. ¡Tú decides cómo disfrutar de nuestra deliciosa comida!"</p>
-        <br><br><br>
-      <button  routerLink="/error"  type="submit" class="btn btn-custom"> Pide ahora  </button>
-      <br>
-    </div>
-  </div>
-  <div class="card"><br><p class="titulos"> Amplia selección de platos </p> 
-    <img src=" https://i.pinimg.com/564x/67/19/f3/6719f370836104b73d70bedd087139ae.jpg" alt="...">
-    <div class="card-body">
-      <p class="card-text">"Explora nuestra amplia variedad de deliciosos platos en el menú. Desde clásicos hasta opciones innovadoras, tenemos algo para todos los gustos. Sabores frescos y auténticos que te encantarán en cada bocado. ¡Descubre una experiencia gastronómica única con nosotros!"</p>
-      <button  routerLink="/menu"  type="submit" class="btn btn-custom"> Conoce más  </button>
-  </div>
   </div>
 </div>
-
-
-
-
-
