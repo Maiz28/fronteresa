@@ -1,3 +1,4 @@
+import { LoginService } from './../../services/login.service';
 import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   public email:string | undefined;
   public password:string | undefined;
 
-  constructor( ) {
+  constructor( public loginService:LoginService) {
    }
 
    login(){
@@ -20,6 +21,10 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  }
+    this.loginService.postUsuario().subscribe(
+      res => console.log(res),
+      err => console.error(err)
+    )
 
+  }
 }

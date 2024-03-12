@@ -6,6 +6,9 @@ export interface mesero {
   correo: string;
 }
 
-export interface ultima {
-  idcomanda: number;
+export interface Usuario{
+  nombre: string;
+  apellido: string; 
+  correo:string; 
+  contrasena: string; 
 }

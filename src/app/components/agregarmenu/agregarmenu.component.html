@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <form #platilloForm ="ngForm" (ngSubmit)="addPlatillo(platilloForm)">
+            <div>
+                <input type="text" class="form-control" name="id" placeholder="Asigana un identificador" [(ngModel)]="platillosService.selectedPlatillo.id " >
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre_del_platillo" placeholder="Nombre de platillo" [(ngModel)]="platillosService.selectedPlatillo.nombre_del_platillo">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="descripcion_del_platillo" placeholder="Descripción del platillo" [(ngModel)]="platillosService.selectedPlatillo.descripcion_del_platillo" >
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="precio" placeholder="Precio" [(ngModel)]="platillosService.selectedPlatillo.precio">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="categoria" placeholder="categoria" [(ngModel)]="platillosService.selectedPlatillo.categoria">
+            </div>
+            <button class="btn btn-primary mr-2"> limpiar</button>
+            <button class="btn btn-secondary" > Guardar </button>
+        </form>
+    </div>
+
+</div>

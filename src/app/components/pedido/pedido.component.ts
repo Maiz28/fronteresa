@@ -1,6 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-
+import { PedidoService } from 'src/app/services/pedido.service';
 
 
 
@@ -12,13 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class PedidoComponent implements OnInit {
 
 
-  constructor() { }
+  constructor( public pedidoService:PedidoService) { }
 
   ngOnInit(): void {
-
+   this.getPedido();
   }
 
- 
+ getPedido(){
+  this.pedidoService.getPedido().subscribe(
+    res => {
+      this.pedidoService.pedidos = res;
+    },
+    err => console.error(err)
+  )
+ }
 
 
 }

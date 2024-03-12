@@ -1,165 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú de Platillos</title>
-    <!-- Agregamos la librería de Font Awesome para los iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-  <div class="menu-container">
-    <div class="menu-card">
-      <div class="menu-image">
-        <img src="https://i.pinimg.com/564x/7f/58/0d/7f580dc5ea4d710f3c376f0e659c06ae.jpg" alt="">
-      </div>
-      <div class="menu-info">
-        <p>Tostada con café.</p>
-        <span>$50</span>
-        <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+<div class="card">
+  <div class="card-body"> 
+    <h1>Menú</h1>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let platillo of platillosService.platillos">
+        <div class="card mb-3">
+          <img>
+          <div class="card-body">
+            <h5 class="card-title">{{ platillo.nombre_del_platillo }}</h5>
+            <p class="card-text">Descripción: {{ platillo.descripcion_del_platillo }}</p>
+            <p class="card-text">Precio: {{ platillo.precio }}</p>
+            <button class="btn btn-secondary" (click)="editPlatillos(platillo)">
+              <i class="material-icons btn-sm" >edit</i> Editar
+            </button>
+            <button class="btn btn-danger" (click)="deletePlatillos(platillo.id)">
+              <i class="material-icons btn-sm">delete</i> Eliminar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="menu-card">
-      <div class="menu-image">
-        <img src="https://i.pinimg.com/564x/31/dc/1f/31dc1fa70e2da25defdcd685634a022e.jpg" alt="Platillo 2">
-      </div>
-      <div class="menu-info">
-        <p>Pan francés con frutos rojos </p>
-        <span>$45</span>
-        <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-      </div>
-    </div>
-    <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/05/db/e5/05dbe580f02a4df5145b4a791857c53b.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Chilaquiles verdes </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/4c/34/f0/4c34f0e70d69de7ca67c61cc6457d0b1.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Fideos con cebollin  </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/13/21/7a/13217abce651e33dc2c72a22554de8c9.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Pasta con pollo </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/6e/c7/8e/6ec78e5bed37d3b0ac52f9581a814195.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Lassage </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/7b/a7/f6/7ba7f65ae13d844bd26289b7ee8b8d8f.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Papas fritas </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/12/1a/71/121a71a6bc75d29c18b427eb3461f19d.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Tacos de pollo</p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/43/63/41/43634164dd5e54a3e1cb45a94a0fee95.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Ensalada </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/96/c3/74/96c3745805d241bde047929bc6e9299c.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Tostada de tinga verde </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/49/ab/33/49ab333e41e8bfed2dc56a5c1bae0c39.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Malteada de chocolate </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/de/66/95/de66956ab61408e9338e1d6bef182ff3.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Mojito de arandano </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/d5/7f/48/d57f48a2e2fd4b4957360a7ad6a74113.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Clericot</p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/04/8b/3a/048b3aedb77a6572e98d9dd605cbf141.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Smoothie de fresa  </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-image">
-          <img src="https://i.pinimg.com/564x/c9/82/e4/c982e4180f5323b91da6cd31399fa716.jpg" alt="Platillo 2">
-        </div>
-        <div class="menu-info">
-          <p>Bebida de pitaya </p>
-          <span>$60</span>
-          <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-        </div>
-      </div>
-    <!-- Agrega más tarjetas aquí según sea necesario -->
   </div>
-</body>
-</html>
+</div>

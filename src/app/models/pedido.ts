@@ -16,13 +16,15 @@ export interface Pedido{
 
 
 export interface Platillo {
-  nombrePlatillo: '';
-  descripcionPlatillo: ''; 
-  precio: 0;
-  categoria: '';
+  id:number;
+  nombre_del_platillo: string;
+  descripcion_del_platillo: string; 
+  precio: number;
+  categoria: string;
 }
 
 export interface Bebida {
+  
   nombre_de_la_bebida: '';
   descripcion_de_bebida: '';
   precio: 0;
