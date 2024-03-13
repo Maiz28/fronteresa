@@ -1,1 +1,34 @@
-<p>reservacion works!</p>
+<div class="card">
+  <div class="card-body"> 
+    <h1>Menú</h1>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let pedido of reservacionService.pedidos">
+        <div class="card mb-3">
+          <img src="URL_IMAGEN" class="card-img-top" alt="Imagen del platillo">
+          <div class="card-body">
+            <h5 class="card-title">Número de Mesa: {{ pedido.numeromesa }}</h5>
+            <p class="card-text">Alimento a Consumir: {{ pedido.alimentoconsumir }}</p>
+            <p class="card-text">Cantidad: {{ pedido.cantidad }}</p>
+            <p class="card-text">Precio del Alimento: {{ pedido.precioalimento }}</p>
+            <p class="card-text">Bebida: {{ pedido.bebida }}</p>
+            <p class="card-text">Cantidad de Bebida: {{ pedido.cantidadbebida }}</p>
+            <p class="card-text">Precio de la Bebida: {{ pedido.preciobebida }}</p>
+            <p class="card-text">Total: {{ pedido.total }}</p>
+            <p class="card-text">Fecha del Pedido: {{ pedido.fechapedido }}</p>
+            <p class="card-text">Hora del Pedido: {{ pedido.horapedido }}</p>
+            <p class="card-text">Estatus: {{ pedido.estatus }}</p>
+            <p class="card-text">Tipo de Pago: {{ pedido.tipopago }}</p>
+            <div class="button-group">
+              <button class="btn btn-secondary">
+                <i class="material-icons btn-sm">edit</i> Editar
+              </button>
+              <button class="btn btn-danger">
+                <i class="material-icons btn-sm">delete</i> Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'console';
 import { PlatillosService } from 'src/app/services/platillos.service';
 import { Platillo } from '../../models/pedido';
 @Component({
