@@ -1,6 +1,6 @@
 .menu-card {
   border: 1px solid #e9ecef;
-  background-color: #e9ecef;
+  background-color: rgba(119, 177, 121, 0.5);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 20px;
@@ -72,4 +72,45 @@
 
 .btn-secondary:hover, .btn-danger:hover, .btn-success:hover {
   opacity: 0.9;
+}
+
+.titulo{
+  color: aliceblue;
+  font-size: 250%;
+
+}
+
+
+/* Estilos para las migas de pan */
+.breadcrumb {
+  
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.breadcrumb-item:last-child {
+  font-weight: 700;
+  color: #d8ffdc; /* Color del último elemento */
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: '>';
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #d8ffdc; /* Color del separador */
+}
+
+.breadcrumb-item a {
+  color: #d8ffdc; /* Color de los enlaces */
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
 }

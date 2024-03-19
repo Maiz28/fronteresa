@@ -1,6 +1,15 @@
+<div style="text-align: center;">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
+      <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+    </li>
+  </ol>
+</nav>
+</div>
 <div class="menu-card">
   <div class="menu-header"> 
-    <h1>Menú</h1>
+    <p class="titulo">Menú</p>
   </div>
   <div class="menu-body">
     <div class="row">

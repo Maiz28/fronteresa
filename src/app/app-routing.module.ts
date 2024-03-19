@@ -8,7 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AgregarmenuComponent } from './components/agregarmenu/agregarmenu.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
-
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 const routes: Routes = [
   { path: '', component:InicioComponent},
   {path: 'pedido', component:PedidoComponent },
@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent}, 
   { path: 'register', component: RegisterComponent},
   { path: 'platillonuevo', component: AgregarmenuComponent},
-  { path: 'reservaciones', component: ReservacionComponent}
+  { path: 'reservaciones', component: ReservacionComponent},
+  { path: 'migas' , component:BreadcrumbsComponent}
 
 ];
 

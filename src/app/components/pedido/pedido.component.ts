@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-
-
-
+import { ReservacionService } from 'src/app/services/reservacion.service';
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -10,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidoComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Inicio', url: '/' }
+  ];
 
-  constructor() { }
+  constructor( public reservacionService:ReservacionService ) { }
 
   ngOnInit(): void {
   }
-
-
-
 
 }
 

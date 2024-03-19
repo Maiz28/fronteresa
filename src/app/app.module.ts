@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule para formularios de plantilla
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
 import { AgregarmenuComponent } from './components/agregarmenu/agregarmenu.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
-
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -25,16 +25,18 @@ import { ReservacionComponent } from './components/reservacion/reservacion.compo
     LoginComponent,
     RegisterComponent,
     AgregarmenuComponent,
-    ReservacionComponent
+    ReservacionComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule, // Importa FormsModule aquí si estás utilizando formularios de plantilla
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,
-    CommonModule
+    CommonModule, 
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

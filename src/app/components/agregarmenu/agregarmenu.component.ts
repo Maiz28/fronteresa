@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PlatillosService } from 'src/app/services/platillos.service';
-
 @Component({
   selector: 'app-agregarmenu',
   templateUrl: './agregarmenu.component.html',

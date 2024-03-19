@@ -8,10 +8,16 @@ import { Pedido } from 'src/app/models/pedido';
 })
 export class ReservacionComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Inicio', url: '' },
+    { label: 'Reservaciones', url: 'reservaciones' }
+  ];
+
+
   constructor( public reservacionService:ReservacionService ) { }
 
   ngOnInit(): void {
-    
+    this.getPedido();
   }
 
   getPedido(){
@@ -22,5 +28,7 @@ export class ReservacionComponent implements OnInit {
       err => console.error(err)
     )
   }
+
+  
 
 }

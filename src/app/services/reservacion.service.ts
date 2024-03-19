@@ -11,9 +11,11 @@ export class ReservacionService {
 
 pedidos: Pedido[]=[];
   constructor( private http: HttpClient) { }
-
+ 
 getPedido(){
   return this.http.get<Pedido[]>(this.URL_API); 
 }
+
+
 
 }

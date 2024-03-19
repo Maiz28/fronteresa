@@ -1,4 +1,13 @@
 <div class="content">
+  <div style="text-align: center;">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
+        <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+      </li>
+    </ol>
+  </nav>
+</div>
   <div class="container mt-4">
     <div class="containerv">
       <img

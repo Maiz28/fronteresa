@@ -9,6 +9,12 @@ import { Platillo } from '../../models/pedido';
 
 export class MenuComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Inicio', url: '' },
+    { label: 'Menú', url: 'menu' }
+  ];
+
+
   constructor(public platillosService:PlatillosService) { }
 
   ngOnInit(): void {
