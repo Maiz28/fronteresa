@@ -1,21 +1,94 @@
-.card {
-    width: 400px;
-    margin: 0 auto;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.card-body {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 600px; /* Establecer un ancho máximo para la tarjeta */
+    margin: 0 auto; /* Centrar la tarjeta horizontalmente */
+    background-color: rgba(234, 250, 241);
+    color: #000000;
   }
   
-  .card-title {
-    text-align: center;
+  .card-header {
+    background-color: #0d501f;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
   }
   
   .form-label {
     font-weight: bold;
   }
   
-  .btn-primary {
-    width: 100%;
+  .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 8px;
   }
+  
+  .btn-primary,
+  .btn-secondary {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0c3b19;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #0e3721;
+  }
+  
+  
+  /* Estilos para las migas de pan */
+  .breadcrumb {
+    
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  .breadcrumb-item {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  
+  .breadcrumb-item:last-child {
+    font-weight: 700;
+    color: #d8ffdc; /* Color del último elemento */
+  }
+  
+  .breadcrumb-item:not(:last-child)::after {
+    content: '>';
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: #d8ffdc; /* Color del separador */
+  }
+  
+  .breadcrumb-item a {
+    color: #d8ffdc; /* Color de los enlaces */
+    text-decoration: none;
+  }
+  
+  .breadcrumb-item a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .titulo{
+    color:rgba(15, 49, 22, 0.5);
+    font-size: 250%;
+  
+  }
+  
   

@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { AgregarmenuComponent } from './components/agregarmenu/agregarmenu.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     RegisterComponent,
     AgregarmenuComponent,
     ReservacionComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm } from '@angular/forms';
 import { ReservacionService } from 'src/app/services/reservacion.service';
+
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -9,7 +10,8 @@ import { ReservacionService } from 'src/app/services/reservacion.service';
 export class PedidoComponent implements OnInit {
 
   breadcrumbs = [
-    { label: 'Inicio', url: '/' }
+    { label: 'Inicio', url: '' },
+    { label: 'Reservación', url: 'pedido' }
   ];
 
   constructor( public reservacionService:ReservacionService ) { }
@@ -17,6 +19,11 @@ export class PedidoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addPedido( form:NgForm){
+    this.reservacionService.createPedido(form.value).subscribe(
+      res =>console.log(res), 
+      err =>console.error(err)
+    )
+  }
+
 }
-
-

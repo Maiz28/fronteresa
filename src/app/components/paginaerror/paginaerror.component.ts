@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaerrorComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Inicio', url: '' },
+    { label: 'Entregas a domicilio', url: 'error' }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

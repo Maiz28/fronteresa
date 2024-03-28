@@ -8,7 +8,15 @@ import { PlatillosService } from 'src/app/services/platillos.service';
 })
 export class AgregarmenuComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Inicio', url: '' },
+    { label: 'Menú', url: 'menu' },
+    { label: 'Agregar platillos', url: 'agregar-platillo' }
+  ];
+
+
   constructor( public platillosService:PlatillosService) { }
+
 
   ngOnInit(): void {
   }

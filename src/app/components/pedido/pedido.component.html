@@ -1,12 +1,57 @@
-<div class="card">
-  
-  <div class="card-body">
-    <form >
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Ingresa tu nombre" name="nombre" ngModel>
-      </div>
-      <button type="reset" class="btn btn-primary mr-2">Clear</button>
-      <button type="submit" class="btn btn-secondary">Save</button>
-    </form>
+<div style="text-align: center;">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
+          <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+        </li>
+      </ol>
+    </nav>
   </div>
+
+<div class=" card-body" style="margin-bottom: 30px;" >
+    <p class="titulo"> Nueva Reservación</p>
+    <form #pedidoForm="ngForm" (ngSubmit)="addPedido(pedidoForm)">
+        <div class="form-group">
+            <input type="text" class="form-control" name="alimentoconsumir" placeholder="alimentoconsumir" [(ngModel)]="reservacionService.selectedPedido.alimentoconsumir">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="cantidad" placeholder="cantidad" [(ngModel)]="reservacionService.selectedPedido.cantidad">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="precioalimento" placeholder="precioalimento" [(ngModel)]="reservacionService.selectedPedido.precioalimento">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="bebida" placeholder="bebida" [(ngModel)]="reservacionService.selectedPedido.bebida">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="cantidadbebida" placeholder="cantidadbebida" [(ngModel)]="reservacionService.selectedPedido.cantidadbebida">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="preciobebida" placeholder="preciobebida" [(ngModel)]="reservacionService.selectedPedido.preciobebida">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="tipo de pago" placeholder="tipopago" [(ngModel)]="reservacionService.selectedPedido.tipopago">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="propina" placeholder="propina" [(ngModel)]="reservacionService.selectedPedido.propina">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="numeromesa" placeholder="numeromesa" [(ngModel)]="reservacionService.selectedPedido.numeromesa">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="estatus" placeholder="estatus" [(ngModel)]="reservacionService.selectedPedido.estatus">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="fechapedido" placeholder="fechapedido" [(ngModel)]="reservacionService.selectedPedido.fechapedido">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="horapedido" placeholder="horapedido" [(ngModel)]="reservacionService.selectedPedido.horapedido">
+        </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="alimentoconsumir" placeholder="alimentoconsumir" [(ngModel)]="reservacionService.selectedPedido.alimentoconsumir">
+        </div>
+        <button class="btn btn-primary mr-2">Limpiar</button>
+        <button class="btn btn-secondary">Guardar</button>
+    </form>
+
 </div>

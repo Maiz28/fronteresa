@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PlatillosService } from 'src/app/services/platillos.service';
 import { Platillo } from '../../models/pedido';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -15,7 +17,7 @@ export class MenuComponent implements OnInit {
   ];
 
 
-  constructor(public platillosService:PlatillosService) { }
+  constructor(public platillosService:PlatillosService, public router: Router) { }
 
   ngOnInit(): void {
   this.getPlatillos();
@@ -43,4 +45,8 @@ export class MenuComponent implements OnInit {
   editPlatillos(platillo:Platillo){
     this.platillosService.selectedPlatillo =platillo;
   }
+  agregarPlatillo() {
+    this.router.navigate(['/agregar-platillo']);
+  }
+  
 }

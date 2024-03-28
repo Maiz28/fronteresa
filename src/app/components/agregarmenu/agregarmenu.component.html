@@ -1,24 +1,44 @@
-<div class="card">
+<div style="text-align: center;">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
+          <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  
+  <div class="card" style="margin-bottom: 30px;"> 
     <div class="card-body">
-        <form #platilloForm ="ngForm" (ngSubmit)="addPlatillo(platilloForm)">
-            <div>
-                <input type="text" class="form-control" name="id" placeholder="Asigana un identificador" [(ngModel)]="platillosService.selectedPlatillo.id " >
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="nombre_del_platillo" placeholder="Nombre de platillo" [(ngModel)]="platillosService.selectedPlatillo.nombre_del_platillo">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="descripcion_del_platillo" placeholder="Descripción del platillo" [(ngModel)]="platillosService.selectedPlatillo.descripcion_del_platillo" >
-            </div>
-            <div class="form-group">
-                <input type="number" class="form-control" name="precio" placeholder="Precio" [(ngModel)]="platillosService.selectedPlatillo.precio">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="categoria" placeholder="categoria" [(ngModel)]="platillosService.selectedPlatillo.categoria">
-            </div>
-            <button class="btn btn-primary mr-2"> limpiar</button>
-            <button class="btn btn-secondary" > Guardar </button>
-        </form>
+        <p class="titulo"> Nuevo platillo</p>
+      <form #platilloForm="ngForm" (ngSubmit)="addPlatillo(platilloForm)">
+        <div>
+          <label for="id" class="form-label">Identificador</label>
+          <input type="text" class="form-control" name="id" placeholder="Asigna un identificador" [(ngModel)]="platillosService.selectedPlatillo.id">
+        </div><br>
+        <div class="form-group">
+          <input type="text" class="form-control" name="nombre_del_platillo" placeholder="Nombre de platillo" [(ngModel)]="platillosService.selectedPlatillo.nombre_del_platillo">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="descripcion_del_platillo" placeholder="Descripción del platillo" [(ngModel)]="platillosService.selectedPlatillo.descripcion_del_platillo">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" name="precio" placeholder="Precio" [(ngModel)]="platillosService.selectedPlatillo.precio">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="categoria" placeholder="Categoría" [(ngModel)]="platillosService.selectedPlatillo.categoria">
+        </div>
+        <button class="btn btn-primary mr-2">Limpiar</button>
+        <button class="btn btn-secondary">Guardar</button>
+      </form>
     </div>
+  </div>
 
-</div>
+  <div> 
+    <div  style="text-align: center; margin-bottom: 30px;" > 
+      <button routerLink="/menu" type="submit" class="btn btn-custom1">
+        Dejar de agregar
+       </button>
+    </div></div>
+
+  

@@ -1,3 +1,13 @@
+<div style="text-align: center;">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
+          <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
 <div class="error-container">
     <img src="https://i.pinimg.com/originals/5b/27/01/5b270123bd7f65a53d4f889baa8609d7.gif" alt="Error Image">
     <h1>Lo sentimos</h1>

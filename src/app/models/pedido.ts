@@ -9,7 +9,7 @@ export interface Pedido{
     propina: number,
     numeromesa: number; 
     estatus: string;
-    fechapedido?: Date;
+    fechapedido?: Date | undefined;
     horapedido? :number; 
     total: number;
   }
