@@ -16,6 +16,10 @@ import { AgregarmenuComponent } from './components/agregarmenu/agregarmenu.compo
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,12 @@ import { PedidoComponent } from './components/pedido/pedido.component';
     BrowserAnimationsModule,
     MatStepperModule,
     CommonModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule, 
+    MatInputModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

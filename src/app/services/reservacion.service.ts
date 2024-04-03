@@ -18,8 +18,6 @@ export class ReservacionService {
     propina: 0,
     numeromesa: 0,
     estatus: '',
-    fechapedido: new Date(),
-    horapedido: 0,
     total: 0
   }
 
