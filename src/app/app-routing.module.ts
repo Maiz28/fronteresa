@@ -9,6 +9,8 @@ import { AgregarmenuComponent } from './components/agregarmenu/agregarmenu.compo
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+
 const routes: Routes = [
   { path: '', component:InicioComponent},
   { path: 'menu', component:MenuComponent},
@@ -18,7 +20,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'agregar-platillo', component: AgregarmenuComponent, pathMatch: 'full', data: { title: 'Agregar Platillo' } },
   { path: 'reservaciones', component: ReservacionComponent},
-  { path: 'migas' , component:BreadcrumbsComponent}
+  { path: 'migas' , component:BreadcrumbsComponent},
+  { path: 'mapa', component: MapaComponent}
 
 ];
 
