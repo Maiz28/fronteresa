@@ -1,42 +1,44 @@
 import { LoginService } from './../../services/login.service';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginRequest } from 'src/app/models/Login.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-  public email: string | undefined;
-  public password: string | undefined;
+export class LoginComponent {
   hide = true;
 
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService, private fb: FormBuilder) {}
+
+  loginForm: FormGroup = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
+  errorMessage: string = '';
 
   login() {
-    console.log(this.email);
-    console.log(this.password);
-  }
+    const data: LoginRequest = {
+      email: this.loginForm.get('email')?.value,
+      password: this.loginForm.get('password')?.value,
+    };
 
-  ngOnInit(): void {
-    this.loginService.postUsuario().subscribe(
-      res => console.log(res),
-      err => console.error(err)
+    this.loginService.login(data).subscribe(
+      (resp) => {
+        console.log(resp.message);
+      },
+      (err) => {
+        console.error(err);
+      }
     );
   }
 
-  emailFormControl: FormControl = new FormControl('', [Validators.required, Validators.email]);
-  errorMessage: string = '';
-
   updateErrorMessage() {
-    if (this.emailFormControl.errors && this.emailFormControl.errors['required']) {
+    if (this.loginForm.errors && this.loginForm.errors['required']) {
       this.errorMessage = 'You must enter a value';
-    } else if (this.emailFormControl.errors && this.emailFormControl.errors['email']) {
+    } else if (this.loginForm.errors && this.loginForm.errors['email']) {
       this.errorMessage = 'Not a valid email';
     } else {
       this.errorMessage = '';
