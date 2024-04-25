@@ -42,24 +42,23 @@
 
     <ng-template #userName>
       <!-- Avatar -->
-      <div class="dropdown">
-        <a
-          data-mdb-dropdown-init
-          class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          id="navbarDropdownMenuAvatar"
-          role="button"
+      <div class="btn-group dropstart">
+        <button
+          type="button"
+          class="btn btn-secondary dropdown-toggle rounded-circle"
+          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <p>{{ user?.username | slice : 0 : 2 | uppercase }}</p>
-        </a>
+          {{ user?.username | slice : 0 : 2 | uppercase }}
+        </button>
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
         >
           <li>
-            <a class="dropdown-item" href="/" onclick="logout()"
-              >Cerrar Sesión</a
-            >
+            <button class="dropdown-item" (click)="logout()">
+              Cerrar Sesión
+            </button>
           </li>
         </ul>
       </div>
