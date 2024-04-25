@@ -41,10 +41,27 @@
     </ng-container>
 
     <ng-template #userName>
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/register">
-          <i class="bi bi-person"></i> {{ user?.username }}
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        >
+          <p>{{ user?.username | slice : 0 : 2 | uppercase }}</p>
         </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="/" onclick="logout()"
+              >Cerrar Sesión</a
+            >
+          </li>
+        </ul>
       </div>
     </ng-template>
   </div>

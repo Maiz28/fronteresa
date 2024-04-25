@@ -21,4 +21,8 @@ export class HeaderComponent implements OnInit {
       this.user = JSON.parse(localStorage.getItem('usuario')!);
     }
   }
+
+  logout() {
+    localStorage.clear();
+  }
 }
