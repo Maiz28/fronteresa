@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MapaComponent } from './components/mapa/mapa.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MapaComponent } from './components/mapa/mapa.component';
     ReservacionComponent,
     BreadcrumbsComponent,
     PedidoComponent,
-    MapaComponent
+    MapaComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

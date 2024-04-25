@@ -1,32 +1,46 @@
-<div style="text-align: center;">
+<div style="text-align: center">
   <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
-      <a [routerLink]="crumb.url">{{ crumb.label }}</a>
-    </li>
-  </ol>
-</nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs">
+        <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+      </li>
+    </ol>
+  </nav>
 </div>
 <div class="menu-card">
-  <div class="menu-header"> 
+  <div class="menu-header">
     <p class="titulo">Menú</p>
   </div>
   <div class="menu-body">
     <div class="row">
       <div class="col-md-4" *ngFor="let platillo of platillosService.platillos">
         <div class="card mb-3">
-          <img src="https://i.pinimg.com/564x/05/db/e5/05dbe580f02a4df5145b4a791857c53b.jpg" class="card-img-top" alt="Imagen del platillo">
+          <img
+            src="https://i.pinimg.com/564x/05/db/e5/05dbe580f02a4df5145b4a791857c53b.jpg"
+            class="card-img-top"
+            alt="Imagen del platillo"
+          />
           <div class="card-body">
             <h5 class="card-title">{{ platillo.nombre_del_platillo }}</h5>
-            <p class="card-text">Descripción: {{ platillo.descripcion_del_platillo }}</p>
+            <p class="card-text">
+              Descripción: {{ platillo.descripcion_del_platillo }}
+            </p>
             <p class="card-text">Precio: {{ platillo.precio }}</p>
             <div class="button-group">
-              <button class="btn btn-sm btn-secondary" (click)="editPlatillos(platillo)">
-                <i class="material-icons">edit</i>
-              </button>
-              <button class="btn btn-sm btn-danger" (click)="deletePlatillos(platillo.id)">
-                <i class="material-icons">delete</i>
-              </button>
+              <ng-container *ngIf="user?.role !== 'user'">
+                <button
+                  class="btn btn-sm btn-secondary"
+                  (click)="editPlatillos(platillo)"
+                >
+                  <i class="material-icons">edit</i>
+                </button>
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="deletePlatillos(platillo.id)"
+                >
+                  <i class="material-icons">delete</i>
+                </button>
+              </ng-container>
               <button class="btn btn-sm btn-success" (click)="(platillo)">
                 <i class="material-icons">add_shopping_cart</i>
               </button>
@@ -35,14 +49,17 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center" >
+    <div class="row justify-content-center">
       <div class="col-md-4 center">
         <div class="card mb-3">
-          <div class="card-body  text-center" >
+          <div class="card-body text-center">
             <h5 class="card-title">Nuevo Platillo</h5>
             <p class="card-text">¡Agrega un nuevo platillo a tu menú!</p>
             <div class="button-group">
-              <button class="btn btn-sm btn-success" (click)="agregarPlatillo()">
+              <button
+                class="btn btn-sm btn-success"
+                (click)="agregarPlatillo()"
+              >
                 Agregar Platillo
               </button>
             </div>
