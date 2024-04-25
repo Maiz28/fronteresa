@@ -1,7 +1,10 @@
 import { LoginService } from './../../services/login.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginRequest } from 'src/app/models/Login.model';
+import Swal from 'sweetalert2';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +14,11 @@ import { LoginRequest } from 'src/app/models/Login.model';
 export class LoginComponent {
   hide = true;
 
-  constructor(public loginService: LoginService, private fb: FormBuilder) {}
+  constructor(
+    public loginService: LoginService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -27,21 +34,29 @@ export class LoginComponent {
 
     this.loginService.login(data).subscribe(
       (resp) => {
-        console.log(resp.message);
+        Swal.fire({
+          title: 'Inicio de sesión',
+          text: resp.message,
+          icon: 'success',
+          backdrop: false,
+          timer: 2000,
+          showConfirmButton: false,
+        }).then(() => {
+          this.router.navigate(['']);
+          this.loginService.setUser(resp.user);
+          localStorage.setItem('usuario', JSON.stringify(resp.user));
+        });
       },
       (err) => {
-        console.error(err);
+        Swal.fire({
+          title: 'Inicio de sesión',
+          text: err.error.message,
+          icon: 'error',
+          backdrop: false,
+          timer: 2000,
+          showConfirmButton: false,
+        });
       }
     );
-  }
-
-  updateErrorMessage() {
-    if (this.loginForm.errors && this.loginForm.errors['required']) {
-      this.errorMessage = 'You must enter a value';
-    } else if (this.loginForm.errors && this.loginForm.errors['email']) {
-      this.errorMessage = 'Not a valid email';
-    } else {
-      this.errorMessage = '';
-    }
   }
 }
