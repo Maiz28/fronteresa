@@ -1,9 +1,13 @@
+import { Platillo } from './../../models/pedido';
+import { CarritoService } from './../../services/carrito.service';
 import { Component, OnInit } from '@angular/core';
 import { PlatillosService } from 'src/app/services/platillos.service';
-import { Platillo } from '../../models/pedido';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { UserResponse } from 'src/app/models/Login.model';
+import { ItemCarrito } from 'src/app/models/ItemCarrito.model';
+
+
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +15,8 @@ import { UserResponse } from 'src/app/models/Login.model';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  item: any ;
+  itemsCarrito: ItemCarrito[] = [];
+
   user: UserResponse | null = null;
   breadcrumbs = [
     { label: 'Inicio', url: '' },
@@ -21,7 +26,8 @@ export class MenuComponent implements OnInit {
   constructor(
     public platillosService: PlatillosService,
     public router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    public carritoService:CarritoService
   ) {}
 
   ngOnInit(): void {
@@ -62,7 +68,18 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/agregar-platillo']);
   }
 
-  agregarCarrito() {
-    console.log("Agregado");
+  agregarCarrito(platillo: any) {
+    const nuevoItemCarrito: ItemCarrito = {
+      id: platillo.id,
+      nombre: platillo.nombre, // Ajusta según la estructura real del objeto de platillo
+      precio: platillo.precio, // Ajusta según la estructura real del objeto de platillo
+      cantidad: 1
+    };
+    this.itemsCarrito.push(nuevoItemCarrito);
+    this.carritoService.agregarAlCarrito(platillo);
+    localStorage.setItem("carrito", JSON.stringify(nuevoItemCarrito))
+    //console.log("Agregado al carrito:", platillo)
+     
+   
   }
 }
