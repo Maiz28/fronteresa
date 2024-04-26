@@ -10,25 +10,29 @@ import { ReservacionComponent } from './components/reservacion/reservacion.compo
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { MapaComponent } from './components/mapa/mapa.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component:InicioComponent},
-  { path: 'menu', component:MenuComponent},
-  { path: 'error', component: PaginaerrorComponent},
-  { path: 'pedido', component: PedidoComponent},
-  { path: 'login', component: LoginComponent}, 
-  { path: 'register', component: RegisterComponent},
-  { path: 'agregar-platillo', component: AgregarmenuComponent, pathMatch: 'full', data: { title: 'Agregar Platillo' } },
-  { path: 'reservaciones', component: ReservacionComponent},
-  { path: 'migas' , component:BreadcrumbsComponent},
-  { path: 'mapa', component: MapaComponent}
-
+  { path: '', component: InicioComponent },
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
+  { path: 'error', component: PaginaerrorComponent },
+  { path: 'pedido', component: PedidoComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'agregar-platillo',
+    component: AgregarmenuComponent,
+    pathMatch: 'full',
+    data: { title: 'Agregar Platillo' },
+  },
+  { path: 'reservaciones', component: ReservacionComponent },
+  { path: 'migas', component: BreadcrumbsComponent },
+  { path: 'mapa', component: MapaComponent },
+  { path: '**', component: PaginaerrorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
-
 export class AppRoutingModule {}
