@@ -114,3 +114,7 @@
 .breadcrumb-item a:hover {
   text-decoration: underline;
 }
+
+.bi-basket{
+  cursor: pointer;
+}

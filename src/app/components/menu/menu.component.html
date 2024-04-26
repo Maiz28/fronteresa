@@ -43,7 +43,7 @@
               </ng-container>
               <ng-template #addCart>
                 <button class="btn btn-sm btn-success" (click)="(platillo)">
-                  <i class="material-icons">add_shopping_cart</i>
+                  <i class="material-icons bi-basket" (click)="agregarCarrito(item)">add_shopping_cart</i>
                 </button>
               </ng-template>
             </div>
@@ -51,23 +51,25 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-md-4 center">
-        <div class="card mb-3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nuevo Platillo</h5>
-            <p class="card-text">¡Agrega un nuevo platillo a tu menú!</p>
-            <div class="button-group">
-              <button
-                class="btn btn-sm btn-success"
-                (click)="agregarPlatillo()"
-              >
-                Agregar Platillo
-              </button>
+    <ng-container  *ngIf="user?.role !== 'user';">
+      <div class="row justify-content-center">
+        <div class="col-md-4 center">
+          <div class="card mb-3">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nuevo Platillo</h5>
+              <p class="card-text">¡Agrega un nuevo platillo a tu menú!</p>
+              <div class="button-group">
+                <button
+                  class="btn btn-sm btn-success"
+                  (click)="agregarPlatillo()"
+                >
+                  Agregar Platillo
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>

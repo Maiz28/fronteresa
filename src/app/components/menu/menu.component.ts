@@ -11,6 +11,7 @@ import { UserResponse } from 'src/app/models/Login.model';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+  item: any ;
   user: UserResponse | null = null;
   breadcrumbs = [
     { label: 'Inicio', url: '' },
@@ -59,5 +60,9 @@ export class MenuComponent implements OnInit {
   }
   agregarPlatillo() {
     this.router.navigate(['/agregar-platillo']);
+  }
+
+  agregarCarrito() {
+    console.log("Agregado");
   }
 }

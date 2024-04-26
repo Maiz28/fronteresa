@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HeaderComponent } from './components/header/header.component';
     PedidoComponent,
     MapaComponent,
     HeaderComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
