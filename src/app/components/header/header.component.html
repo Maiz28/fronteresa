@@ -23,7 +23,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" routerLink="/reservaciones">Reservaciones</a>
-        <a class="nav-link" routerLink="/menu">Menú</a>
+        <ng-container *ngIf="user">
+          <a class="nav-link" routerLink="/menu">Menú</a>
+        </ng-container>
         <a class="nav-link" routerLink="/mapa">Mapa del sitio </a>
       </div>
     </div>

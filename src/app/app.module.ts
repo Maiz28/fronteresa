@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,7 +36,7 @@ import { HeaderComponent } from './components/header/header.component';
     BreadcrumbsComponent,
     PedidoComponent,
     MapaComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,16 +45,15 @@ import { HeaderComponent } from './components/header/header.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,
-    CommonModule, 
-    ReactiveFormsModule, 
+    CommonModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-
 export class AppModule {}

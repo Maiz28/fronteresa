@@ -78,11 +78,18 @@ export class RegisterComponent {
       return;
     }
 
+    let rol: string = 'user';
+    const email: string = this.registerForm.get('email')?.value;
+
+    if (email.endsWith('gustoes.com')) {
+      rol = 'admin';
+    }
+
     let data: RegisterRequest = {
       username: this.registerForm.get('username')?.value,
       email: this.registerForm.get('email')?.value,
       password: this.registerForm.get('password')?.value,
-      role: 'user',
+      role: rol,
     };
 
     this.loginService.register(data).subscribe(

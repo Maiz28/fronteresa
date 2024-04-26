@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserResponse } from 'src/app/models/Login.model';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -10,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class HeaderComponent implements OnInit {
   user: UserResponse | null = null;
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {
     this.loginService.user$.subscribe((user) => {
@@ -24,6 +25,8 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    window.location.reload();
+    this.router.navigate(['']).then(() => {
+      window.location.reload();
+    });
   }
 }

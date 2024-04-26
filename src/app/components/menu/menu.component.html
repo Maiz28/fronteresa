@@ -27,7 +27,7 @@
             </p>
             <p class="card-text">Precio: {{ platillo.precio }}</p>
             <div class="button-group">
-              <ng-container *ngIf="user?.role !== 'user'">
+              <ng-container *ngIf="user?.role !== 'user'; else addCart">
                 <button
                   class="btn btn-sm btn-secondary"
                   (click)="editPlatillos(platillo)"
@@ -41,9 +41,11 @@
                   <i class="material-icons">delete</i>
                 </button>
               </ng-container>
-              <button class="btn btn-sm btn-success" (click)="(platillo)">
-                <i class="material-icons">add_shopping_cart</i>
-              </button>
+              <ng-template #addCart>
+                <button class="btn btn-sm btn-success" (click)="(platillo)">
+                  <i class="material-icons">add_shopping_cart</i>
+                </button>
+              </ng-template>
             </div>
           </div>
         </div>
