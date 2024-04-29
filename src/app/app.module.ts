@@ -24,6 +24,7 @@ import { MapaComponent } from './components/mapa/mapa.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PoliticasComponent } from './components/politicas/politicas.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 
@@ -42,7 +43,7 @@ import { PoliticasComponent } from './components/politicas/politicas.component';
     MapaComponent,
     HeaderComponent,
     CartComponent,
-    PoliticasComponent
+    PoliticasComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +59,7 @@ import { PoliticasComponent } from './components/politicas/politicas.component';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent],
