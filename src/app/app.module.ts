@@ -23,6 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PoliticasComponent } from './components/politicas/politicas.component';
+
+
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { CartComponent } from './components/cart/cart.component';
     MapaComponent,
     HeaderComponent,
     CartComponent,
+    PoliticasComponent
   ],
   imports: [
     BrowserModule,

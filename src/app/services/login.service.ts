@@ -1,12 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  LoginRequest,
-  LoginResponse,
-  RegisterRequest,
-  RegisterResponse,
-  UserResponse,
-} from '../models/Login.model';
+import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, UserResponse } from '../models/Login.model';
+
 import { Usuario } from '../models/Mesero';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -28,7 +23,15 @@ export class LoginService {
   }
 
   register(data: RegisterRequest) {
-    return this.http.post<RegisterResponse>(`${this.URL_API}/register`, data);
+    return this.http.post    <RegisterResponse>(`${this.URL_API}/register`, data);
+  }
+
+  requestPasswordReset(email: string) {
+    return this.http.post(`${this.URL_API}/request-password-reset`, { email });
+  }
+
+  resetPassword(data: ResetPasswordRequest) {
+    return this.http.put<ResetPasswordResponse>(`${this.URL_API}/reset-password`, data);
   }
 
   setUser(user: UserResponse | null) {

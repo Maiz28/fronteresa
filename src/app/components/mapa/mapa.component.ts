@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Inicio', url: '' },
+    { label: 'Mapa del sitio', url: 'mapa' },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -29,3 +29,13 @@ export interface UserResponse {
   email: string;
   role: string;
 }
+
+export interface ResetPasswordRequest {
+  email: string;
+  token: string;
+  newPassword: string;
+}
+
+export interface ResetPasswordResponse {
+  message: string;
+}
