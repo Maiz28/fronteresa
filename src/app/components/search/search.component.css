@@ -1,49 +1,70 @@
-.search_container{
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: 1rem auto;
-    align-content: center ;
-    padding: 1rem;
-    background: rgb(250 246 246 / 16%);
-    border-radius: 0.5rem;
-}
-
-.search_name{
-    width: 100 ;
-}
-
-label {
-    color: #fff;
-    margin-bottom: .25rem;
+.search__container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative; /* Establece el contexto de posicionamiento */
+  }
+  
+  .search_label {
+    position: relative;
+  }
+  
+  .search_input {
+    width: 100%;
+    padding: 10px 40px 10px 20px; /* Ajusta el espacio para el texto y el icono */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .search_label i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  ul.search_results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Posiciona la lista debajo del input */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none; /* Elimina el borde superior */
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Asegura que la lista esté por encima de otros elementos */
+  }
+  
+  ul.search_results li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  ul.search_results li:last-child {
+    border-bottom: none; /* Elimina el borde inferior del último elemento */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  a:hover {
+    color: #007bff;
+  }
+  
+  .no-results {
+    display: none;
+    color: red;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  .no-results.show {
     display: block;
-}
-
-input {
-    width: 95%;
-    padding: 1rem 3.75rem;
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.5;
-    background-color: #fff ;
-    border: 1 px solid #cdd4da;
-    border-radius: .25rem;
-    height: calc(2.25rem + 2px);
-    transition: border-color .15s ease-in-out, box-shdow .15s ease-in-out;
-    &:focus{
-        outline: none;
-    }    
-}
-
-
-@media screen and (max-width: 768px){
-    .search_container{
-        flex-direction: column;
-
-        .search_name{
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-    }
-    
-}
+  }
