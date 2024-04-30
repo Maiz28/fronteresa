@@ -33,22 +33,25 @@
         <a class="nav-link" routerLink="/mapa">Mapa del sitio </a>
       </div>
     </div>
-    <div>
+    <div class="search-container">
       <app-search></app-search>
-    </div>
-    <ng-container *ngIf="!user; else userName">
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/register">
-          <i class="bi bi-person"></i> Crear Cuenta
-        </a>
-      </div>
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/login">
-          <i class="bi bi-person"></i> Iniciar Sesión
-        </a>
-      </div>
-    </ng-container>
+  </div>
 
+  <div class="user-container">
+    <ng-container *ngIf="!user; else userName">
+      <div class="dropdown">
+        <button class="dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user">      </i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/register">Crear Cuenta</a></li>
+          <li><a class="dropdown-item" href="/login">Iniciar Sesión</a></li>
+        </ul>
+      </div> 
+    </ng-container>
+  </div>
+  
+  
     <ng-template #userName>
       <!-- Avatar -->
       <div class="btn-group dropstart">

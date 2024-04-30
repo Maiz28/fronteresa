@@ -52,3 +52,23 @@
 .content {
   background-color: #071a11;
 }
+.scroll-to-top-btn {
+  position: fixed; /* Posición fija */
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Ajusta la distancia desde el lado derecho */
+  z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  background-color: #4CAF50; /* Color verde */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #45a049; /* Cambia de color al pasar el ratón */
+}

@@ -68,3 +68,15 @@
   .no-results.show {
     display: block;
   }
+
+  @media screen and (max-width: 768px) {
+    .search_input {
+      padding-right: 30px; /* Reduce el espacio para el icono en pantallas más pequeñas */
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .search_input {
+      padding-right: 20px; /* Reduce aún más el espacio para el icono en pantallas muy pequeñas */
+    }
+  }
