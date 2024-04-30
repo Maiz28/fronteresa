@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserResponse } from 'src/app/models/Login.model';
 import { LoginService } from 'src/app/services/login.service';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
+  
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
