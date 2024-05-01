@@ -30,12 +30,9 @@ export interface UserResponse {
   role: string;
 }
 
-export interface ResetPasswordRequest {
-  email: string;
+export interface BackResponse {
+  estado: number;
+  mensaje: string;
+  objeto: any;
   token: string;
-  newPassword: string;
-}
-
-export interface ResetPasswordResponse {
-  message: string;
 }

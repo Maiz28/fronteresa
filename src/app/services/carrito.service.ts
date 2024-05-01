@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CarritoService {
+  items: string[] = [];
 
-
-
-  
-  items: string[] = []; 
-
-  constructor() { }
+  constructor() {}
 
   agregarAlCarrito(nombre_platillo: string) {
     this.items.push(nombre_platillo);
@@ -23,5 +19,4 @@ export class CarritoService {
   obtenerItems() {
     return this.items;
   }
-  
 }

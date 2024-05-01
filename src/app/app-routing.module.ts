@@ -12,20 +12,19 @@ import { PedidoComponent } from './components/pedido/pedido.component';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
-import { RestcontraComponent } from './components/rest-contra/rest-contra.component';
 import { PoliticasComponent } from './components/politicas/politicas.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'politicas', component: PoliticasComponent},
-  { path:'rescontra', component: RestcontraComponent},
+  { path: 'politicas', component: PoliticasComponent },
   { path: 'carrrito', component: CartComponent },
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'error', component: PaginaerrorComponent },
   { path: 'pedido', component: PedidoComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'resetPassword', component: ResetPasswordComponent },
   { path: 'register', component: RegisterComponent },
-  
   {
     path: 'agregar-platillo',
     component: AgregarmenuComponent,
@@ -35,7 +34,7 @@ const routes: Routes = [
   { path: 'reservaciones', component: ReservacionComponent },
   { path: 'migas', component: BreadcrumbsComponent },
   { path: 'mapa', component: MapaComponent },
-  { path: '**', component: PaginaerrorComponent }
+  { path: '**', component: PaginaerrorComponent },
 ];
 
 @NgModule({

@@ -26,6 +26,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { PoliticasComponent } from './components/politicas/politicas.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SearchComponent } from './components/search/search.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 
@@ -46,6 +47,7 @@ import { SearchComponent } from './components/search/search.component';
     CartComponent,
     PoliticasComponent,
     SearchComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

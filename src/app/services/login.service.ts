@@ -1,9 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, UserResponse } from '../models/Login.model';
+import {
+  LoginRequest,
+  LoginResponse,
+  RegisterRequest,
+  RegisterResponse,
+  BackResponse,
+  UserResponse,
+} from '../models/Login.model';
 
-import { Usuario } from '../models/Mesero';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +21,7 @@ export class LoginService {
   public user$: Observable<UserResponse | null> =
     this.userSubject.asObservable();
 
-  URL_API = ' http://localhost:4000/api/user';
+  URL_API = `${environment.API_URL}/api/user`;
 
   constructor(public http: HttpClient) {}
 
@@ -23,18 +30,44 @@ export class LoginService {
   }
 
   register(data: RegisterRequest) {
-    return this.http.post    <RegisterResponse>(`${this.URL_API}/register`, data);
-  }
-
-  requestPasswordReset(email: string) {
-    return this.http.post(`${this.URL_API}/request-password-reset`, { email });
-  }
-
-  resetPassword(data: ResetPasswordRequest) {
-    return this.http.put<ResetPasswordResponse>(`${this.URL_API}/reset-password`, data);
+    return this.http.post<RegisterResponse>(`${this.URL_API}/register`, data);
   }
 
   setUser(user: UserResponse | null) {
     this.userSubject.next(user);
+  }
+
+  sendCode(email: string) {
+    const data = {
+      correo: email,
+    };
+
+    return this.http.post<BackResponse>(`${this.URL_API}/sendCode`, data);
+  }
+
+  validCode(code: string, secret: string) {
+    const data = {
+      codigo: code,
+      secret: secret,
+    };
+
+    return this.http.post<BackResponse>(`${this.URL_API}/validCode`, data);
+  }
+
+  updatePassword(email: string, password: string) {
+    const data = {
+      correo: email,
+      password: password,
+    };
+
+    return this.http.put<BackResponse>(`${this.URL_API}/updatePassword`, data);
+  }
+
+  secondFactor(email: string) {
+    const data = {
+      correo: email,
+    };
+
+    return this.http.post<BackResponse>(`${this.URL_API}/secondFactor`, data);
   }
 }
