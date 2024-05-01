@@ -1,8 +1,8 @@
 <div class="content">
   <app-header></app-header>
-  <router-outlet></router-outlet>
-
-
+  <div class="min-vh-100">
+    <router-outlet></router-outlet>
+  </div>
 
   <footer class="footer">
     <div class="container text-center">
@@ -24,7 +24,7 @@
             <li>
               <a
                 href="https://www.facebook.com/p/Restaurante-Gustó-100064173429303/?paipv=0&eav=Afb_-C9F3j5asm-Yozu3seMobc65c0w7Prt-_RsKQS047JWghBGgmqcR3stM3XHW9gg&_rdr"
-                ><i class="fab fa-facebook" target="_blank"   ></i
+                ><i class="fab fa-facebook" target="_blank"></i
               ></a>
             </li>
             <li>
@@ -48,9 +48,8 @@
       </div>
     </div>
   </footer>
-
-  
 </div>
 <button (click)="scrollToTop()" class="scroll-to-top-btn" *ngIf="isScrolled">
-  <i class="fas fa-arrow-up"></i> <!-- Icono de flecha hacia arriba -->
+  <i class="fas fa-arrow-up"></i>
+  <!-- Icono de flecha hacia arriba -->
 </button>
