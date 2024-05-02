@@ -8,44 +8,42 @@
     </nav>
   </div>
 
-<div class=" card-body" style="margin-bottom: 30px;" >
-    <p class="titulo"> Nueva Reservación</p>
-    <form #pedidoForm="ngForm" (ngSubmit)="addPedido(pedidoForm)">
+  <div class="card-body" style="margin-bottom: 30px;">
+    <p class="titulo">Nueva Reservación</p>
+    <form #reservacionForm="ngForm" (ngSubmit)="addReservacion(reservacionForm)">
         <div class="form-group">
-            <input type="text" class="form-control" name="alimentoconsumir" placeholder="alimentoconsumir" [(ngModel)]="reservacionService.selectedPedido.alimentoconsumir">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="cantidad" placeholder="cantidad" [(ngModel)]="reservacionService.selectedPedido.cantidad">
+            <input type="text" class="form-control" name="fecha_reserva" placeholder="Fecha de reserva" [(ngModel)]="reservacionesService.selectedReservacion.fecha_reserva">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="precioalimento" placeholder="precioalimento" [(ngModel)]="reservacionService.selectedPedido.precioalimento">
+          <select class="form-control" name="numero_mesa" [(ngModel)]="reservacionesService.selectedReservacion.numero_mesa">
+              <option value="1">Mesa 1</option>
+              <option value="2">Mesa 2</option>
+              <option value="3">Mesa 3</option>
+              <option value="4">Mesa 4</option>
+          </select>
+      </div>
+      
+        <div class="form-group">
+            <input type="number" class="form-control" name="numero_personas" placeholder="Número de personas" [(ngModel)]="reservacionesService.selectedReservacion.numero_personas">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="bebida" placeholder="bebida" [(ngModel)]="reservacionService.selectedPedido.bebida">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="cantidadbebida" placeholder="cantidadbebida" [(ngModel)]="reservacionService.selectedPedido.cantidadbebida">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="preciobebida" placeholder="preciobebida" [(ngModel)]="reservacionService.selectedPedido.preciobebida">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="tipo de pago" placeholder="tipopago" [(ngModel)]="reservacionService.selectedPedido.tipopago">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="propina" placeholder="propina" [(ngModel)]="reservacionService.selectedPedido.propina">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="numeromesa" placeholder="numeromesa" [(ngModel)]="reservacionService.selectedPedido.numeromesa">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="estatus" placeholder="estatus" [(ngModel)]="reservacionService.selectedPedido.estatus">
-        </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="total" placeholder="alimentoconsumir" [(ngModel)]="reservacionService.selectedPedido.total">
-        </div>
-        <button class="btn btn-primary mr-2">Limpiar</button>
-        <button class="btn btn-secondary">Guardar</button>
+          <select class="form-control" name="motivo_reserva" [(ngModel)]="reservacionesService.selectedReservacion.descripcion">
+              <option value="Aniversario">Aniversario</option>
+              <option value="Cumpleaños">Cumpleaños</option>
+              <option value="Reunión de negocios">Reunión de negocios</option>
+              <option value="Celebración familiar">Celebración familiar</option>
+              <option value="Celebración familiar">Otro</option>
+          </select>
+      </div>
+      
+        <button type="reset" class="btn btn-primary mr-2">Limpiar</button>
+        <button type="submit" class="btn btn-secondary">Guardar</button>
     </form>
-
 </div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+<div *ngIf="successMessage" class="alert alert-success">
+  {{ successMessage }}
+</div>
+

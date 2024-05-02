@@ -30,3 +30,11 @@ export interface Bebida {
   precio: 0;
   categoria: '';
 }
+
+export interface Reservacion {
+  fecha_reserva: '',
+  numero_mesa: 0,
+  numero_personas: 0,
+  descripcion: '',
+  id_usuario: 0
+}

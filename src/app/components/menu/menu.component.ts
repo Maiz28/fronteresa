@@ -82,4 +82,18 @@ export class MenuComponent implements OnInit {
      
    
   }
+
+  descripcionVisible: { [key: string]: boolean } = {};
+ 
+  toggleDescripcion(platilloId: number): void {
+    const platilloIdStr = platilloId.toString();
+    if (this.descripcionVisible[platilloIdStr] === undefined) {
+      this.descripcionVisible[platilloIdStr] = true;
+    } else {
+      this.descripcionVisible[platilloIdStr] = !this.descripcionVisible[platilloIdStr];
+    }
+  }
+  
+
+  
 }

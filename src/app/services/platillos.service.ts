@@ -7,7 +7,7 @@ import { Platillo } from '../models/pedido';
 })
 
 export class PlatillosService {
-  URL_API = 'http://Localhost:4000/api/employees';
+  URL_API = 'http://Localhost:3200/api/employees';
 
   selectedPlatillo: Platillo={
     id:0 ,

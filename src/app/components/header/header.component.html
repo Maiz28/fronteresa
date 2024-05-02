@@ -27,9 +27,9 @@
       
         <ng-container *ngIf="user">
           <a class="nav-link" routerLink="/menu">Menú</a>
-          <a class="nav-link" routerLink="/carrrito">Carrito</a>
+          <a class="nav-link" routerLink="/pedido">Reservaciones </a>
         </ng-container>
-        
+        <a class="nav-link" routerLink="/reservaciones">Menú</a>
         <a class="nav-link" routerLink="/mapa">Mapa del sitio </a>
       </div>
     </div>
@@ -37,22 +37,22 @@
       <app-search></app-search>
   </div>
 
-  <div class="user-container">
     <ng-container *ngIf="!user; else userName">
-      <div class="dropdown">
-        <button class="dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-user">      </i>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/register">Crear Cuenta</a></li>
-          <li><a class="dropdown-item" href="/login">Iniciar Sesión</a></li>
-        </ul>
-      </div> 
+      
+      <div class="navbar-nav ms-auto">
+  <a class="nav-link" href="/register">
+    <i class="bi bi-person-plus"></i> Crear Cuenta
+  </a>
+</div>
+<div class="navbar-nav ms-auto">
+  <a class="nav-link" href="/login">
+    <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+  </a>
+</div>
+
+      
     </ng-container>
-  </div>
-  
-  
-    <ng-template #userName>
+      <ng-template #userName>
       <!-- Avatar -->
       <div class="btn-group dropstart">
         <button
@@ -70,7 +70,7 @@
           <li>
             <button class="dropdown-item" (click)="logout()">
               Cerrar Sesión
-            </button>
+            </button>            
           </li>
         </ul>
       </div>

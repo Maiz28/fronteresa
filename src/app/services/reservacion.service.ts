@@ -21,7 +21,7 @@ export class ReservacionService {
     total: 0
   }
 
-  URL_API = 'http://localhost:4000/api/pedido'
+  URL_API = 'http://localhost:3200/api/pedido'
 
 pedidos: Pedido[]=[];
   constructor( private http: HttpClient) { }
