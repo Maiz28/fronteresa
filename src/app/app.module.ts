@@ -27,6 +27,7 @@ import { PoliticasComponent } from './components/politicas/politicas.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SearchComponent } from './components/search/search.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { TerminosComponent } from './components/terminos/terminos.component';
 
 
 
@@ -48,6 +49,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     PoliticasComponent,
     SearchComponent,
     ResetPasswordComponent,
+    TerminosComponent,
   ],
   imports: [
     BrowserModule,

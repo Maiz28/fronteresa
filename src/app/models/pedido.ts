@@ -21,6 +21,7 @@ export interface Platillo {
   descripcion_del_platillo: string; 
   precio: number;
   categoria: string;
+  url:string;
 }
 
 export interface Bebida {

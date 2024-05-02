@@ -10,6 +10,10 @@ export class PoliticasComponent implements OnInit {
   private el = inject(ElementRef);
   private title = inject(Title);
  
+  breadcrumbs = [
+    { label: 'Inicio', url: '' },
+    { label: 'Pliticas', url: 'politicas' }
+  ];
 
   constructor() { }
 

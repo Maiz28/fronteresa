@@ -12,9 +12,11 @@
     <p class="titulo">Nueva Reservación</p>
     <form #reservacionForm="ngForm" (ngSubmit)="addReservacion(reservacionForm)">
         <div class="form-group">
+          <label for="feha">Fecha de reservación</label>
             <input type="text" class="form-control" name="fecha_reserva" placeholder="Fecha de reserva" [(ngModel)]="reservacionesService.selectedReservacion.fecha_reserva">
         </div>
         <div class="form-group">
+          <label for="mesa">Elige el número de mesa </label>
           <select class="form-control" name="numero_mesa" [(ngModel)]="reservacionesService.selectedReservacion.numero_mesa">
               <option value="1">Mesa 1</option>
               <option value="2">Mesa 2</option>
@@ -24,9 +26,11 @@
       </div>
       
         <div class="form-group">
+          <label for="personas"> Número de personas</label>
             <input type="number" class="form-control" name="numero_personas" placeholder="Número de personas" [(ngModel)]="reservacionesService.selectedReservacion.numero_personas">
         </div>
         <div class="form-group">
+          <label for="motivo"> Motivo de la reservación</label>
           <select class="form-control" name="motivo_reserva" [(ngModel)]="reservacionesService.selectedReservacion.descripcion">
               <option value="Aniversario">Aniversario</option>
               <option value="Cumpleaños">Cumpleaños</option>

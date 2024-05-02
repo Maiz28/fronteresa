@@ -17,6 +17,7 @@ export class PedidoComponent implements OnInit {
 
   constructor( public reservacionesService:ReservacionesService,  ) { }
   ngOnInit(): void {
+    
   }
 
 

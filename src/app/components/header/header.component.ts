@@ -13,7 +13,9 @@ import { SearchComponent } from '../search/search.component';
 export class HeaderComponent implements OnInit {
   user: UserResponse | null = null;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private loginService: LoginService, private router: Router) {
+
+  }
 
   ngOnInit(): void {
     this.loginService.user$.subscribe((user) => {
@@ -31,4 +33,13 @@ export class HeaderComponent implements OnInit {
       window.location.reload();
     });
   }
+
+
+  showFullName: boolean = false;
+
+hideFullName() {
+  // Se oculta el nombre completo solo si el cursor sale tanto del botón como del área donde se muestra el nombre completo
+  this.showFullName = false;
+}
+
 }

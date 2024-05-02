@@ -9,6 +9,7 @@ import { ItemCarrito } from 'src/app/models/ItemCarrito.model';
 
 
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -93,6 +94,10 @@ export class MenuComponent implements OnInit {
       this.descripcionVisible[platilloIdStr] = !this.descripcionVisible[platilloIdStr];
     }
   }
+
+
+
+
   
 
   

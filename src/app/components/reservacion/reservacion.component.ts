@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ReservacionService } from 'src/app/services/reservacion.service';
 import { Pedido } from 'src/app/models/pedido';
+import { ReservacionesService } from 'src/app/services/reservaciones.service';
+
 @Component({
   selector: 'app-reservacion',
   templateUrl: './reservacion.component.html',
@@ -14,16 +15,17 @@ export class ReservacionComponent implements OnInit {
   ];
 
 
-  constructor( public reservacionService:ReservacionService ) { }
+  constructor( public reservacionesService:ReservacionesService ) { }
 
   ngOnInit(): void {
-    this.getPedido();
+    this.getReservacion();
+    
   }
 
-  getPedido(){
-    this.reservacionService.getPedido().subscribe(
+  getReservacion(){
+    this.reservacionesService.getReservaciones().subscribe(
       res => {
-        this.reservacionService.pedidos=res;
+        this.reservacionesService.reservacion =res;
       },
       err => console.error(err)
     )

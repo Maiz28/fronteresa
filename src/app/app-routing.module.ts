@@ -14,9 +14,11 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
 import { PoliticasComponent } from './components/politicas/politicas.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { TerminosComponent } from './components/terminos/terminos.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
+  { path: 'condiciones', component: TerminosComponent}, 
   { path: 'politicas', component: PoliticasComponent },
   { path: 'carrrito', component: CartComponent },
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
