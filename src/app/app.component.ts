@@ -4,14 +4,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-
   isScrolled: boolean = false;
-  tiempoInicioSesion: number =0;
+  tiempoInicioSesion: number = 0;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.iniciarAlerta();
@@ -35,7 +34,7 @@ export class AppComponent implements OnInit {
     let tiempoTranscurrido = tiempoActual - this.tiempoInicioSesion;
     let tiempoAlerta = 30 * 60 * 1000; // 2 minutos en milisegundos
     if (tiempoTranscurrido >= tiempoAlerta) {
-      let confirmacion = confirm("¿Quieres cerrar sesión?");
+      let confirmacion = confirm('¿Quieres cerrar sesión?');
       if (confirmacion) {
         this.logout();
       }
@@ -53,5 +52,4 @@ export class AppComponent implements OnInit {
     let tiempoAlerta: number = 2 * 60 * 1000; // 2 minutos en milisegundos
     setInterval(() => this.mostrarAlerta(), tiempoAlerta);
   }
-
 }

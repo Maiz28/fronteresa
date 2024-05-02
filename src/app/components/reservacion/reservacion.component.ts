@@ -1,36 +1,56 @@
 import { Component, OnInit } from '@angular/core';
-import { Pedido } from 'src/app/models/pedido';
+import { UserResponse } from 'src/app/models/Login.model';
+import { LoginService } from 'src/app/services/login.service';
 import { ReservacionesService } from 'src/app/services/reservaciones.service';
 
 @Component({
   selector: 'app-reservacion',
   templateUrl: './reservacion.component.html',
-  styleUrls: ['./reservacion.component.css']
+  styleUrls: ['./reservacion.component.css'],
 })
 export class ReservacionComponent implements OnInit {
-
   breadcrumbs = [
     { label: 'Inicio', url: '' },
-    { label: 'Reservaciones', url: 'reservaciones' }
+    { label: 'Reservaciones', url: 'reservaciones' },
   ];
+  user: UserResponse | null = null;
 
-
-  constructor( public reservacionesService:ReservacionesService ) { }
+  constructor(
+    public reservacionesService: ReservacionesService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
-    this.getReservacion();
-    
+    this.loginService.user$.subscribe((user) => {
+      this.user = user;
+    });
+
+    if (this.user === null) {
+      this.user = JSON.parse(localStorage.getItem('usuario')!);
+    }
+
+    if (this.user?.role !== 'admin') {
+      this.getReservacionByUser(this.user?.id!);
+    } else {
+      this.getReservacion();
+    }
   }
 
-  getReservacion(){
+  getReservacion() {
     this.reservacionesService.getReservaciones().subscribe(
-      res => {
-        this.reservacionesService.reservacion =res;
+      (res) => {
+        this.reservacionesService.reservacion = res;
       },
-      err => console.error(err)
-    )
+      (err) => console.error(err)
+    );
   }
 
-  
-
+  getReservacionByUser(idUser: number) {
+    this.reservacionesService.getReservacionByUser(idUser).subscribe(
+      (res) => {
+        this.reservacionesService.reservacion = res;
+      },
+      (err) => console.error(err)
+    );
+  }
 }

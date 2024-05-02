@@ -81,7 +81,7 @@ export class RegisterComponent {
     let rol: string = 'user';
     const email: string = this.registerForm.get('email')?.value;
 
-    if (email.endsWith('gustoes.com')) {
+    if (email.endsWith('hotmail.com') || email.endsWith('outlook.com')) {
       rol = 'admin';
     }
 
