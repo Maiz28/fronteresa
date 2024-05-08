@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Reservacion } from '../models/pedido';
+import { userInfo } from 'os';
 
 @Injectable({
   providedIn: 'root',
@@ -30,4 +31,6 @@ export class ReservacionesService {
   getReservacionByUser(idUser: number) {
     return this.http.get<Reservacion[]>(`${this.URL_API}?idUser=${idUser}`);
   }
+
+
 }

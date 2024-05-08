@@ -14,6 +14,7 @@ export class ReservacionComponent implements OnInit {
     { label: 'Reservaciones', url: 'reservaciones' },
   ];
   user: UserResponse | null = null;
+ 
 
   constructor(
     public reservacionesService: ReservacionesService,
@@ -35,6 +36,11 @@ export class ReservacionComponent implements OnInit {
       this.getReservacion();
     }
   }
+
+  getUserName(): string | null {
+    return this.user?.username || null;
+  }
+
 
   getReservacion() {
     this.reservacionesService.getReservaciones().subscribe(

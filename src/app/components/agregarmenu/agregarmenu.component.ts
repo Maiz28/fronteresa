@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PlatillosService } from 'src/app/services/platillos.service';
+
+
 @Component({
   selector: 'app-agregarmenu',
   templateUrl: './agregarmenu.component.html',
@@ -17,16 +19,25 @@ export class AgregarmenuComponent implements OnInit {
 
   constructor( public platillosService:PlatillosService) { }
 
+  successMessage: string = '';
 
   ngOnInit(): void {
   }
 
-  addPlatillo( form:NgForm){
+  addPlatillo(form: NgForm) {
     this.platillosService.createPlatillo(form.value).subscribe(
-      res =>console.log(res), 
-      err =>console.error(err)
-    ); form.resetForm();
-
+      res => {
+        console.log(res);
+        form.resetForm();
+        this.successMessage = '¡Platillo agregado correctamente!';
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
 
 

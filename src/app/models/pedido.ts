@@ -36,5 +36,5 @@ export interface Reservacion {
   numero_mesa: 0,
   numero_personas: 0,
   descripcion: '',
-  id_usuario: 0
+  id_usuario: 0,
 }

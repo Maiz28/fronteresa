@@ -121,7 +121,7 @@
     ora "5.4.1"
     rxjs "6.6.7"
 
-"@angular/animations@^13.0.0 || ^14.0.0-0", "@angular/animations@13.3.12":
+"@angular/animations@^13.0.0 || ^14.0.0-0", "@angular/animations@~13.3.0", "@angular/animations@13.3.12":
   version "13.3.12"
   resolved "https://registry.npmjs.org/@angular/animations/-/animations-13.3.12.tgz"
   integrity sha512-dc2JDokKJuuNxzzZa9FvuQU71kYC/e0xCLjGxEgX48sGKwajHRGBuzYFb8EmvLeA24SshYGmrxN0vGG9GhLK6g==

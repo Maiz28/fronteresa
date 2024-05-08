@@ -272,3 +272,26 @@
   font-family: initial;
   background-color: aliceblue;
 }
+
+.button-group {
+  height: 50px; /* Establecer una altura fija para los contenedores de botones */
+  display: flex; /* Utilizar flexbox para alinear verticalmente los elementos */
+  align-items: center; /* Alinear verticalmente los botones */
+  justify-content: center; /* Centrar horizontalmente los botones */
+}
+
+
+.contenedor3 {
+  max-height: 200px; /* Tamaño máximo del div */
+  overflow-y: auto; /* Permitir desplazamiento vertical si el contenido excede el tamaño */
+  padding: 10px; /* Espaciado interior */
+}
+
+.btn-bajar {
+  display: none; /* Ocultar el botón por defecto */
+}
+
+/* Mostrar el botón solo si el contenido excede el tamaño máximo */
+.contenedor:hover .btn-bajar {
+  display: block;
+}
