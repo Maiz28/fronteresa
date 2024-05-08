@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   mostrarAlerta() {
     let tiempoActual = Date.now();
     let tiempoTranscurrido = tiempoActual - this.tiempoInicioSesion;
-    let tiempoAlerta = 30 * 60 * 1000; // 2 minutos en milisegundos
+    let tiempoAlerta = 60 * 60 * 1000; // 2 minutos en milisegundos
     if (tiempoTranscurrido >= tiempoAlerta) {
       let confirmacion = confirm('¿Quieres cerrar sesión?');
       if (confirmacion) {

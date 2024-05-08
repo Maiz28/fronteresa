@@ -25,7 +25,8 @@ export class AgregarmenuComponent implements OnInit {
     this.platillosService.createPlatillo(form.value).subscribe(
       res =>console.log(res), 
       err =>console.error(err)
-    )
+    ); form.resetForm();
+
   }
 
 

@@ -14,8 +14,7 @@ export class PlatillosService {
     nombre_del_platillo:'',
     descripcion_del_platillo: '',
     precio: 0 ,
-    categoria:'',
-    url:''
+    categoria:''  
   }
 
   platillos: Platillo[] = [];
