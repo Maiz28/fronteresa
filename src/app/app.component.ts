@@ -7,8 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+
   isScrolled: boolean = false;
   tiempoInicioSesion: number = 0;
+  tiempoAlerta: number = 60 * 1000; 
+  tiempoRespuesta: number = 60 * 1000; 
+  alertaMostrada: boolean = false;
+  tiempoCierre: any;
+
 
   constructor(private router: Router) {}
 
@@ -29,17 +35,23 @@ export class AppComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+ 
   mostrarAlerta() {
     let tiempoActual = Date.now();
     let tiempoTranscurrido = tiempoActual - this.tiempoInicioSesion;
-    let tiempoAlerta = 60 * 60 * 1000; // 2 minutos en milisegundos
-    if (tiempoTranscurrido >= tiempoAlerta) {
+    if (!this.alertaMostrada && tiempoTranscurrido >= this.tiempoAlerta) {
+      this.alertaMostrada = true;
       let confirmacion = confirm('¿Quieres cerrar sesión?');
       if (confirmacion) {
         this.logout();
+      } else {
+        this.tiempoCierre = setTimeout(() => {
+          this.logout();
+        }, this.tiempoRespuesta);
       }
     }
   }
+
 
   logout() {
     localStorage.clear();
@@ -48,8 +60,18 @@ export class AppComponent implements OnInit {
     });
   }
 
-  iniciarAlerta() {
-    let tiempoAlerta: number = 2 * 60 * 1000; // 2 minutos en milisegundos
-    setInterval(() => this.mostrarAlerta(), tiempoAlerta);
+  
+  iniciarSesion() {
+    this.tiempoInicioSesion = Date.now();
+    this.alertaMostrada = false; 
+    clearTimeout(this.tiempoCierre); 
+    this.tiempoCierre = setTimeout(() => {
+      this.logout();
+    }, this.tiempoRespuesta);
   }
+
+  iniciarAlerta() {
+    setInterval(() => this.mostrarAlerta(), 1000);
+  }
+
 }
