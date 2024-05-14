@@ -6,9 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { UserResponse } from 'src/app/models/Login.model';
 import { ItemCarrito } from 'src/app/models/ItemCarrito.model';
-
-
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +14,7 @@ import { ItemCarrito } from 'src/app/models/ItemCarrito.model';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  itemsCarrito: ItemCarrito[] = [];
+  itemsCarrito: Platillo[] = [];
 
   user: UserResponse | null = null;
   breadcrumbs = [
@@ -28,7 +26,7 @@ export class MenuComponent implements OnInit {
     public platillosService: PlatillosService,
     public router: Router,
     private loginService: LoginService,
-    public carritoService:CarritoService
+    public carritoService: CarritoService
   ) {}
 
   ngOnInit(): void {
@@ -65,40 +63,32 @@ export class MenuComponent implements OnInit {
   editPlatillos(platillo: Platillo) {
     this.platillosService.selectedPlatillo = platillo;
   }
+
   agregarPlatillo() {
     this.router.navigate(['/agregar-platillo']);
   }
 
-  agregarCarrito(platillo: any) {
-    const nuevoItemCarrito: ItemCarrito = {
-      id: platillo.id,
-      nombre: platillo.nombre, // Ajusta según la estructura real del objeto de platillo
-      precio: platillo.precio, // Ajusta según la estructura real del objeto de platillo
-      cantidad: 1
-    };
-    this.itemsCarrito.push(nuevoItemCarrito);
-    this.carritoService.agregarAlCarrito(platillo);
-    localStorage.setItem("carrito", JSON.stringify(nuevoItemCarrito))
-    //console.log("Agregado al carrito:", platillo)
-     
-   
+  addToCart(product: Platillo) {
+    this.carritoService.addProduct(product);
+  }
+
+  totalCart(): number {
+    return this.carritoService.totalCart();
+  }
+
+  showToast(name: string) {
+    Swal.fire({ text: `${name} agregado al carrito`, icon: 'success' });
   }
 
   descripcionVisible: { [key: string]: boolean } = {};
- 
+
   toggleDescripcion(platilloId: number): void {
     const platilloIdStr = platilloId.toString();
     if (this.descripcionVisible[platilloIdStr] === undefined) {
       this.descripcionVisible[platilloIdStr] = true;
     } else {
-      this.descripcionVisible[platilloIdStr] = !this.descripcionVisible[platilloIdStr];
+      this.descripcionVisible[platilloIdStr] =
+        !this.descripcionVisible[platilloIdStr];
     }
   }
-
-
-
-
-  
-
-  
 }

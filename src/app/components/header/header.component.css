@@ -41,31 +41,16 @@
   ); /* Color del texto para elementos deshabilitados */
 }
 
-
 .navbar-brand {
   font-size: 1.5rem;
 }
 
 .search-container {
-  margin-left: 12%; /* Empuja el componente de búsqueda hacia la derecha */
   margin-right: 10px; /* Espacio entre el componente de búsqueda y el elemento anterior */
 }
 
-
-
 @media screen and (max-width: 768px) {
   .dropdown {
-    position: stati
-  c; /* Cambia la posición a estática para que se ajuste automáticamente */
-  }}
-
-
-
-
-
-
-
-
-
-
-
+    position: stati c; /* Cambia la posición a estática para que se ajuste automáticamente */
+  }
+}
