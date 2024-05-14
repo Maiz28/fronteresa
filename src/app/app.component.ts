@@ -7,19 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-
   isScrolled: boolean = false;
   tiempoInicioSesion: number = 0;
-  tiempoAlerta: number = 60 * 1000; 
-  tiempoRespuesta: number = 60 * 1000; 
+  tiempoAlerta: number = 60 * 1000;
+  tiempoRespuesta: number = 60 * 1000;
   alertaMostrada: boolean = false;
   tiempoCierre: any;
-
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.iniciarAlerta();
+    // this.iniciarAlerta();
   }
 
   @HostListener('window:scroll', [])
@@ -35,7 +33,6 @@ export class AppComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
- 
   mostrarAlerta() {
     let tiempoActual = Date.now();
     let tiempoTranscurrido = tiempoActual - this.tiempoInicioSesion;
@@ -52,7 +49,6 @@ export class AppComponent implements OnInit {
     }
   }
 
-
   logout() {
     localStorage.clear();
     this.router.navigate(['']).then(() => {
@@ -60,11 +56,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-  
   iniciarSesion() {
     this.tiempoInicioSesion = Date.now();
-    this.alertaMostrada = false; 
-    clearTimeout(this.tiempoCierre); 
+    this.alertaMostrada = false;
+    clearTimeout(this.tiempoCierre);
     this.tiempoCierre = setTimeout(() => {
       this.logout();
     }, this.tiempoRespuesta);
@@ -73,5 +68,4 @@ export class AppComponent implements OnInit {
   iniciarAlerta() {
     setInterval(() => this.mostrarAlerta(), 1000);
   }
-
 }

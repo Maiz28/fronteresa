@@ -24,28 +24,46 @@
           />
           <div class="card-body" *ngIf="descripcionVisible[platillo.id]">
             <h5 class="card-title">{{ platillo.nombre_del_platillo }}</h5>
-            <p class="card-text">Descripción: {{ platillo.descripcion_del_platillo }}</p>
+            <p class="card-text">
+              Descripción: {{ platillo.descripcion_del_platillo }}
+            </p>
             <p class="card-text">Precio: {{ platillo.precio }}</p>
             <div class="button-group">
               <ng-container *ngIf="user?.role !== 'user'; else addCart">
-                <button class="btn btn-sm btn-secondary" (click)="editPlatillos(platillo)">
+                <button
+                  class="btn btn-sm btn-secondary"
+                  (click)="editPlatillos(platillo)"
+                >
                   <i class="material-icons">edit</i>
                 </button>
-                <button class="btn btn-sm btn-danger" (click)="deletePlatillos(platillo.id)">
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="deletePlatillos(platillo.id)"
+                >
                   <i class="material-icons">delete</i>
                 </button>
               </ng-container>
               <ng-template #addCart>
+                <button class="btn btn-success" (click)="addToCart(platillo)">
+                  Agregar al carrito
+                </button>
               </ng-template>
             </div>
           </div>
-          <button class="btn btn-primary btn-sm color" (click)="toggleDescripcion(platillo.id)">
-            {{ descripcionVisible[platillo.id] ? 'Mostrar Imagen' : 'Mostrar Descripción' }}
+          <button
+            class="btn btn-primary btn-sm color"
+            (click)="toggleDescripcion(platillo.id)"
+          >
+            {{
+              descripcionVisible[platillo.id]
+                ? "Mostrar Imagen"
+                : "Mostrar Descripción"
+            }}
           </button>
         </div>
       </div>
     </div>
-    <ng-container *ngIf="user?.role !== 'user';">
+    <ng-container *ngIf="user?.role !== 'user'">
       <div class="row justify-content-center">
         <div class="col-md-4 center">
           <div class="card mb-3">
@@ -53,7 +71,10 @@
               <h5 class="card-title">Nuevo Platillo</h5>
               <p class="card-text">¡Agrega un nuevo platillo a tu menú!</p>
               <div class="button-group">
-                <button class="btn btn-sm btn-success" (click)="agregarPlatillo()">
+                <button
+                  class="btn btn-sm btn-success"
+                  (click)="agregarPlatillo()"
+                >
                   Agregar Platillo
                 </button>
               </div>
