@@ -6,7 +6,7 @@ import { Platillo } from '../models/pedido';
   providedIn: 'root',
 })
 export class PlatillosService {
-  URL_API = 'http://Localhost:3200/api/employees';
+  URL_API = 'https://back-end-h5qk.onrender.com/api/employees';
 
   selectedPlatillo: Platillo = {
     id: 0,

@@ -21,7 +21,7 @@ export class ReservacionService {
     total: 0
   }
 
-  URL_API = 'http://localhost:3200/api/pedido'
+  URL_API = 'https://back-end-h5qk.onrender.com/api/pedido'
 
 pedidos: Pedido[]=[];
   constructor( private http: HttpClient) { }

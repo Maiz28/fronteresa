@@ -15,7 +15,7 @@ export class ReservacionesService {
     id_usuario: 0,
   };
 
-  private URL_API = 'http://localhost:3200/api/reservacion';
+  private URL_API = 'https://back-end-h5qk.onrender.com/api/reservacion';
 
   reservacion: Reservacion[] = [];
   constructor(private http: HttpClient) {}
