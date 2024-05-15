@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: 'http://localhost:3200',
+  API_URL: 'https://back-end-h5qk.onrender.com',
 };
