@@ -37,6 +37,8 @@ const routes: Routes = [
   { path: 'migas', component: BreadcrumbsComponent },
   { path: 'mapa', component: MapaComponent },
   { path: '**', component: PaginaerrorComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+
 ];
 
 @NgModule({

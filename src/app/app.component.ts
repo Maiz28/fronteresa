@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { InactivityService } from './services/inactivity.service.ts.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   alertaMostrada: boolean = false;
   tiempoCierre: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private inactivityService: InactivityService) {}
 
   ngOnInit(): void {
     // this.iniciarAlerta();
